@@ -31,12 +31,7 @@
       </div>
     </div>
 
-    <script src="scripts/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script>
-      console.log(location.origin);
-      var socket = io(location.origin);
-    </script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <!-- <script src="/bower_components/jquery/dist/jquery.js"></script> -->
@@ -44,6 +39,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
+    <script src="scripts/socket.io.js"></script>
     <script src="scripts/init.js"></script>
     <script src="scripts/draw.js"></script>
     <!-- endbuild -->

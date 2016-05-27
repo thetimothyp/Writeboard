@@ -1,8 +1,8 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.io = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+(function(f){if(typeof exports==='object'&&typeof module!=='undefined'){module.exports=f()}else if(typeof define==='function'&&define.amd){define([],f)}else{var g;if(typeof window!=='undefined'){g=window}else if(typeof global!=='undefined'){g=global}else if(typeof self!=='undefined'){g=self}else{g=this}g.io = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=='function'&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error('Cannot find module \''+o+'\'');throw f.code='MODULE_NOT_FOUND',f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=='function'&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 
 module.exports =  _dereq_('./lib/');
 
-},{"./lib/":2}],2:[function(_dereq_,module,exports){
+},{'./lib/':2}],2:[function(_dereq_,module,exports){
 
 module.exports = _dereq_('./socket');
 
@@ -14,7 +14,7 @@ module.exports = _dereq_('./socket');
  */
 module.exports.parser = _dereq_('engine.io-parser');
 
-},{"./socket":3,"engine.io-parser":19}],3:[function(_dereq_,module,exports){
+},{'./socket':3,'engine.io-parser':19}],3:[function(_dereq_,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -365,12 +365,12 @@ Socket.prototype.probe = function (name) {
   }
 
   function onTransportClose(){
-    onerror("transport closed");
+    onerror('transport closed');
   }
 
   //When the socket is closed while we're probing
   function onclose(){
-    onerror("socket closed");
+    onerror('socket closed');
   }
 
   //When the socket is upgraded while we're probing
@@ -745,8 +745,8 @@ Socket.prototype.filterUpgrades = function (upgrades) {
   return filteredUpgrades;
 };
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"./transport":4,"./transports":5,"component-emitter":15,"debug":17,"engine.io-parser":19,"indexof":23,"parsejson":26,"parseqs":27,"parseuri":28}],4:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'./transport':4,'./transports':5,'component-emitter':15,'debug':17,'engine.io-parser':19,'indexof':23,'parsejson':26,'parseqs':27,'parseuri':28}],4:[function(_dereq_,module,exports){
 /**
  * Module dependencies.
  */
@@ -903,7 +903,7 @@ Transport.prototype.onClose = function () {
   this.emit('close');
 };
 
-},{"component-emitter":15,"engine.io-parser":19}],5:[function(_dereq_,module,exports){
+},{'component-emitter':15,'engine.io-parser':19}],5:[function(_dereq_,module,exports){
 (function (global){
 /**
  * Module dependencies
@@ -959,8 +959,8 @@ function polling(opts){
   }
 }
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"./polling-jsonp":6,"./polling-xhr":7,"./websocket":9,"xmlhttprequest-ssl":10}],6:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'./polling-jsonp':6,'./polling-xhr':7,'./websocket':9,'xmlhttprequest-ssl':10}],6:[function(_dereq_,module,exports){
 (function (global){
 
 /**
@@ -1201,8 +1201,8 @@ JSONPPolling.prototype.doWrite = function (data, fn) {
   }
 };
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"./polling":8,"component-inherit":16}],7:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'./polling':8,'component-inherit':16}],7:[function(_dereq_,module,exports){
 (function (global){
 /**
  * Module requirements.
@@ -1617,8 +1617,8 @@ function unloadHandler() {
   }
 }
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"./polling":8,"component-emitter":15,"component-inherit":16,"debug":17,"xmlhttprequest-ssl":10}],8:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'./polling':8,'component-emitter':15,'component-inherit':16,'debug':17,'xmlhttprequest-ssl':10}],8:[function(_dereq_,module,exports){
 /**
  * Module dependencies.
  */
@@ -1867,7 +1867,7 @@ Polling.prototype.uri = function(){
   return schema + '://' + (ipv6 ? '[' + this.hostname + ']' : this.hostname) + port + this.path + query;
 };
 
-},{"../transport":4,"component-inherit":16,"debug":17,"engine.io-parser":19,"parseqs":27,"xmlhttprequest-ssl":10,"yeast":30}],9:[function(_dereq_,module,exports){
+},{'../transport':4,'component-inherit':16,'debug':17,'engine.io-parser':19,'parseqs':27,'xmlhttprequest-ssl':10,'yeast':30}],9:[function(_dereq_,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -2158,8 +2158,8 @@ WS.prototype.check = function(){
   return !!WebSocket && !('__initialize' in WebSocket && this.name === WS.prototype.name);
 };
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"../transport":4,"component-inherit":16,"debug":17,"engine.io-parser":19,"parseqs":27,"ws":undefined,"yeast":30}],10:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'../transport':4,'component-inherit':16,'debug':17,'engine.io-parser':19,'parseqs':27,'ws':undefined,'yeast':30}],10:[function(_dereq_,module,exports){
 // browser shim for xmlhttprequest module
 var hasCORS = _dereq_('has-cors');
 
@@ -2197,7 +2197,7 @@ module.exports = function(opts) {
   }
 }
 
-},{"has-cors":22}],11:[function(_dereq_,module,exports){
+},{'has-cors':22}],11:[function(_dereq_,module,exports){
 module.exports = after
 
 function after(count, callback, err_cb) {
@@ -2267,11 +2267,11 @@ module.exports = function(arraybuffer, start, end) {
  * Licensed under the MIT license.
  */
 (function(chars){
-  "use strict";
+  'use strict';
 
   exports.encode = function(arraybuffer) {
     var bytes = new Uint8Array(arraybuffer),
-    i, len = bytes.length, base64 = "";
+    i, len = bytes.length, base64 = '';
 
     for (i = 0; i < len; i+=3) {
       base64 += chars[bytes[i] >> 2];
@@ -2281,9 +2281,9 @@ module.exports = function(arraybuffer, start, end) {
     }
 
     if ((len % 3) === 2) {
-      base64 = base64.substring(0, base64.length - 1) + "=";
+      base64 = base64.substring(0, base64.length - 1) + '=';
     } else if (len % 3 === 1) {
-      base64 = base64.substring(0, base64.length - 2) + "==";
+      base64 = base64.substring(0, base64.length - 2) + '==';
     }
 
     return base64;
@@ -2294,9 +2294,9 @@ module.exports = function(arraybuffer, start, end) {
     len = base64.length, i, p = 0,
     encoded1, encoded2, encoded3, encoded4;
 
-    if (base64[base64.length - 1] === "=") {
+    if (base64[base64.length - 1] === '=') {
       bufferLength--;
-      if (base64[base64.length - 2] === "=") {
+      if (base64[base64.length - 2] === '=') {
         bufferLength--;
       }
     }
@@ -2317,7 +2317,7 @@ module.exports = function(arraybuffer, start, end) {
 
     return arraybuffer;
   };
-})("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/");
+})('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/');
 
 },{}],14:[function(_dereq_,module,exports){
 (function (global){
@@ -2418,7 +2418,7 @@ module.exports = (function() {
   }
 })();
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
 },{}],15:[function(_dereq_,module,exports){
 
 /**
@@ -2763,7 +2763,7 @@ function localstorage(){
   } catch (e) {}
 }
 
-},{"./debug":18}],18:[function(_dereq_,module,exports){
+},{'./debug':18}],18:[function(_dereq_,module,exports){
 
 /**
  * This is the common logic for both the Node.js and web browser
@@ -2962,7 +2962,7 @@ function coerce(val) {
   return val;
 }
 
-},{"ms":25}],19:[function(_dereq_,module,exports){
+},{'ms':25}],19:[function(_dereq_,module,exports){
 (function (global){
 /**
  * Module dependencies.
@@ -3559,8 +3559,8 @@ exports.decodePayloadAsBinary = function (data, binaryType, callback) {
   });
 };
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"./keys":20,"after":11,"arraybuffer.slice":12,"base64-arraybuffer":13,"blob":14,"has-binary":21,"utf8":29}],20:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'./keys':20,'after':11,'arraybuffer.slice':12,'base64-arraybuffer':13,'blob':14,'has-binary':21,'utf8':29}],20:[function(_dereq_,module,exports){
 
 /**
  * Gets the keys for an object.
@@ -3642,8 +3642,8 @@ function hasBinary(data) {
   return _hasBinary(data);
 }
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"isarray":24}],22:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'isarray':24}],22:[function(_dereq_,module,exports){
 
 /**
  * Module exports.
@@ -3839,7 +3839,7 @@ module.exports = function parsejson(data) {
     return (new Function('return ' + data))();
   }
 };
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
 },{}],27:[function(_dereq_,module,exports){
 /**
  * Compiles a querystring
@@ -4167,7 +4167,7 @@ module.exports = function parseuri(str) {
 
 }(this));
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
 },{}],30:[function(_dereq_,module,exports){
 'use strict';
 
@@ -4332,7 +4332,7 @@ exports.connect = lookup;
 exports.Manager = _dereq_('./manager');
 exports.Socket = _dereq_('./socket');
 
-},{"./manager":32,"./socket":34,"./url":35,"debug":39,"socket.io-parser":47}],32:[function(_dereq_,module,exports){
+},{'./manager':32,'./socket':34,'./url':35,'debug':39,'socket.io-parser':47}],32:[function(_dereq_,module,exports){
 
 /**
  * Module dependencies.
@@ -4891,7 +4891,7 @@ Manager.prototype.onreconnect = function(){
   this.emitAll('reconnect', attempt);
 };
 
-},{"./on":33,"./socket":34,"backo2":36,"component-bind":37,"component-emitter":38,"debug":39,"engine.io-client":1,"indexof":42,"socket.io-parser":47}],33:[function(_dereq_,module,exports){
+},{'./on':33,'./socket':34,'backo2':36,'component-bind':37,'component-emitter':38,'debug':39,'engine.io-client':1,'indexof':42,'socket.io-parser':47}],33:[function(_dereq_,module,exports){
 
 /**
  * Module exports.
@@ -5331,7 +5331,7 @@ Socket.prototype.compress = function(compress){
   return this;
 };
 
-},{"./on":33,"component-bind":37,"component-emitter":38,"debug":39,"has-binary":41,"socket.io-parser":47,"to-array":51}],35:[function(_dereq_,module,exports){
+},{'./on':33,'component-bind':37,'component-emitter':38,'debug':39,'has-binary':41,'socket.io-parser':47,'to-array':51}],35:[function(_dereq_,module,exports){
 (function (global){
 
 /**
@@ -5410,8 +5410,8 @@ function url(uri, loc){
   return obj;
 }
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"debug":39,"parseuri":45}],36:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'debug':39,'parseuri':45}],36:[function(_dereq_,module,exports){
 
 /**
  * Expose `Backoff`.
@@ -5688,9 +5688,9 @@ Emitter.prototype.hasListeners = function(event){
 
 },{}],39:[function(_dereq_,module,exports){
 arguments[4][17][0].apply(exports,arguments)
-},{"./debug":40,"dup":17}],40:[function(_dereq_,module,exports){
+},{'./debug':40,'dup':17}],40:[function(_dereq_,module,exports){
 arguments[4][18][0].apply(exports,arguments)
-},{"dup":18,"ms":44}],41:[function(_dereq_,module,exports){
+},{'dup':18,'ms':44}],41:[function(_dereq_,module,exports){
 (function (global){
 
 /*
@@ -5752,16 +5752,16 @@ function hasBinary(data) {
   return _hasBinary(data);
 }
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"isarray":43}],42:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'isarray':43}],42:[function(_dereq_,module,exports){
 arguments[4][23][0].apply(exports,arguments)
-},{"dup":23}],43:[function(_dereq_,module,exports){
+},{'dup':23}],43:[function(_dereq_,module,exports){
 arguments[4][24][0].apply(exports,arguments)
-},{"dup":24}],44:[function(_dereq_,module,exports){
+},{'dup':24}],44:[function(_dereq_,module,exports){
 arguments[4][25][0].apply(exports,arguments)
-},{"dup":25}],45:[function(_dereq_,module,exports){
+},{'dup':25}],45:[function(_dereq_,module,exports){
 arguments[4][28][0].apply(exports,arguments)
-},{"dup":28}],46:[function(_dereq_,module,exports){
+},{'dup':28}],46:[function(_dereq_,module,exports){
 (function (global){
 /*global Blob,File*/
 
@@ -5905,8 +5905,8 @@ exports.removeBlobs = function(data, callback) {
   }
 };
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
-},{"./is-buffer":48,"isarray":43}],47:[function(_dereq_,module,exports){
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
+},{'./is-buffer':48,'isarray':43}],47:[function(_dereq_,module,exports){
 
 /**
  * Module dependencies.
@@ -6308,7 +6308,7 @@ function error(data){
   };
 }
 
-},{"./binary":46,"./is-buffer":48,"component-emitter":49,"debug":39,"isarray":43,"json3":50}],48:[function(_dereq_,module,exports){
+},{'./binary':46,'./is-buffer':48,'component-emitter':49,'debug':39,'isarray':43,'json3':50}],48:[function(_dereq_,module,exports){
 (function (global){
 
 module.exports = isBuf;
@@ -6324,21 +6324,21 @@ function isBuf(obj) {
          (global.ArrayBuffer && obj instanceof ArrayBuffer);
 }
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
 },{}],49:[function(_dereq_,module,exports){
 arguments[4][15][0].apply(exports,arguments)
-},{"dup":15}],50:[function(_dereq_,module,exports){
+},{'dup':15}],50:[function(_dereq_,module,exports){
 (function (global){
 /*! JSON v3.3.2 | http://bestiejs.github.io/json3 | Copyright 2012-2014, Kit Cambridge | http://kit.mit-license.org */
 ;(function () {
   // Detect the `define` function exposed by asynchronous module loaders. The
   // strict `define` check is necessary for compatibility with `r.js`.
-  var isLoader = typeof define === "function" && define.amd;
+  var isLoader = typeof define === 'function' && define.amd;
 
   // A set of types used to distinguish objects from primitives.
   var objectTypes = {
-    "function": true,
-    "object": true
+    'function': true,
+    'object': true
   };
 
   // Detect the `exports` object exposed by CommonJS implementations.
@@ -6349,30 +6349,30 @@ arguments[4][15][0].apply(exports,arguments)
   // and the `window` object in browsers. Rhino exports a `global` function
   // instead.
   var root = objectTypes[typeof window] && window || this,
-      freeGlobal = freeExports && objectTypes[typeof module] && module && !module.nodeType && typeof global == "object" && global;
+      freeGlobal = freeExports && objectTypes[typeof module] && module && !module.nodeType && typeof global == 'object' && global;
 
-  if (freeGlobal && (freeGlobal["global"] === freeGlobal || freeGlobal["window"] === freeGlobal || freeGlobal["self"] === freeGlobal)) {
+  if (freeGlobal && (freeGlobal['global'] === freeGlobal || freeGlobal['window'] === freeGlobal || freeGlobal['self'] === freeGlobal)) {
     root = freeGlobal;
   }
 
   // Public: Initializes JSON 3 using the given `context` object, attaching the
   // `stringify` and `parse` functions to the specified `exports` object.
   function runInContext(context, exports) {
-    context || (context = root["Object"]());
-    exports || (exports = root["Object"]());
+    context || (context = root['Object']());
+    exports || (exports = root['Object']());
 
     // Native constructor aliases.
-    var Number = context["Number"] || root["Number"],
-        String = context["String"] || root["String"],
-        Object = context["Object"] || root["Object"],
-        Date = context["Date"] || root["Date"],
-        SyntaxError = context["SyntaxError"] || root["SyntaxError"],
-        TypeError = context["TypeError"] || root["TypeError"],
-        Math = context["Math"] || root["Math"],
-        nativeJSON = context["JSON"] || root["JSON"];
+    var Number = context['Number'] || root['Number'],
+        String = context['String'] || root['String'],
+        Object = context['Object'] || root['Object'],
+        Date = context['Date'] || root['Date'],
+        SyntaxError = context['SyntaxError'] || root['SyntaxError'],
+        TypeError = context['TypeError'] || root['TypeError'],
+        Math = context['Math'] || root['Math'],
+        nativeJSON = context['JSON'] || root['JSON'];
 
     // Delegate to the native `stringify` and `parse` implementations.
-    if (typeof nativeJSON == "object" && nativeJSON) {
+    if (typeof nativeJSON == 'object' && nativeJSON) {
       exports.stringify = nativeJSON.stringify;
       exports.parse = nativeJSON.parse;
     }
@@ -6402,19 +6402,19 @@ arguments[4][15][0].apply(exports,arguments)
         return has[name];
       }
       var isSupported;
-      if (name == "bug-string-char-index") {
+      if (name == 'bug-string-char-index') {
         // IE <= 7 doesn't support accessing string characters using square
         // bracket notation. IE 8 only supports this for primitives.
-        isSupported = "a"[0] != "a";
-      } else if (name == "json") {
+        isSupported = 'a'[0] != 'a';
+      } else if (name == 'json') {
         // Indicates whether both `JSON.stringify` and `JSON.parse` are
         // supported.
-        isSupported = has("json-stringify") && has("json-parse");
+        isSupported = has('json-stringify') && has('json-parse');
       } else {
         var value, serialized = '{"a":[1,true,false,null,"\\u0000\\b\\n\\f\\r\\t"]}';
         // Test `JSON.stringify`.
-        if (name == "json-stringify") {
-          var stringify = exports.stringify, stringifySupported = typeof stringify == "function" && isExtended;
+        if (name == 'json-stringify') {
+          var stringify = exports.stringify, stringifySupported = typeof stringify == 'function' && isExtended;
           if (stringifySupported) {
             // A test function object with a custom `toJSON` method.
             (value = function () {
@@ -6424,10 +6424,10 @@ arguments[4][15][0].apply(exports,arguments)
               stringifySupported =
                 // Firefox 3.1b1 and b2 serialize string, number, and boolean
                 // primitives as object literals.
-                stringify(0) === "0" &&
+                stringify(0) === '0' &&
                 // FF 3.1b1, b2, and JSON 2 serialize wrapped primitives as object
                 // literals.
-                stringify(new Number()) === "0" &&
+                stringify(new Number()) === '0' &&
                 stringify(new String()) == '""' &&
                 // FF 3.1b1, 2 throw an error if the value is `null`, `undefined`, or
                 // does not define a canonical JSON representation (this applies to
@@ -6445,24 +6445,24 @@ arguments[4][15][0].apply(exports,arguments)
                 // objects with custom `toJSON` methods as well, unless they are nested
                 // inside object or array literals. YUI 3.0.0b1 ignores custom `toJSON`
                 // methods entirely.
-                stringify(value) === "1" &&
-                stringify([value]) == "[1]" &&
+                stringify(value) === '1' &&
+                stringify([value]) == '[1]' &&
                 // Prototype <= 1.6.1 serializes `[undefined]` as `"[]"` instead of
                 // `"[null]"`.
-                stringify([undef]) == "[null]" &&
+                stringify([undef]) == '[null]' &&
                 // YUI 3.0.0b1 fails to serialize `null` literals.
-                stringify(null) == "null" &&
+                stringify(null) == 'null' &&
                 // FF 3.1b1, 2 halts serialization if an array contains a function:
                 // `[1, true, getClass, 1]` serializes as "[1,true,],". FF 3.1b3
                 // elides non-JSON values from objects and arrays, unless they
                 // define custom `toJSON` methods.
-                stringify([undef, getClass, null]) == "[null,null,null]" &&
+                stringify([undef, getClass, null]) == '[null,null,null]' &&
                 // Simple serialization test. FF 3.1b1 uses Unicode escape sequences
                 // where character escape codes are expected (e.g., `\b` => `\u0008`).
-                stringify({ "a": [value, true, false, null, "\x00\b\n\f\r\t"] }) == serialized &&
+                stringify({ 'a': [value, true, false, null, '\x00\b\n\f\r\t'] }) == serialized &&
                 // FF 3.1b1 and b2 ignore the `filter` and `width` arguments.
-                stringify(null, value) === "1" &&
-                stringify([1, 2], null, 1) == "[\n 1,\n 2\n]" &&
+                stringify(null, value) === '1' &&
+                stringify([1, 2], null, 1) == '[\n 1,\n 2\n]' &&
                 // JSON 2, Prototype <= 1.7, and older WebKit builds incorrectly
                 // serialize extended years.
                 stringify(new Date(-8.64e15)) == '"-271821-04-20T00:00:00.000Z"' &&
@@ -6481,17 +6481,17 @@ arguments[4][15][0].apply(exports,arguments)
           isSupported = stringifySupported;
         }
         // Test `JSON.parse`.
-        if (name == "json-parse") {
+        if (name == 'json-parse') {
           var parse = exports.parse;
-          if (typeof parse == "function") {
+          if (typeof parse == 'function') {
             try {
               // FF 3.1b1, b2 will throw an exception if a bare literal is provided.
               // Conforming implementations should also coerce the initial argument to
               // a string prior to parsing.
-              if (parse("0") === 0 && !parse(false)) {
+              if (parse('0') === 0 && !parse(false)) {
                 // Simple parsing test.
                 value = parse(serialized);
-                var parseSupported = value["a"].length == 5 && value["a"][0] === 1;
+                var parseSupported = value['a'].length == 5 && value['a'][0] === 1;
                 if (parseSupported) {
                   try {
                     // Safari <= 5.1.2 and FF 3.1b1 allow unescaped tabs in strings.
@@ -6502,7 +6502,7 @@ arguments[4][15][0].apply(exports,arguments)
                       // FF 4.0 and 4.0.1 allow leading `+` signs and leading
                       // decimal points. FF 4.0, 4.0.1, and IE 9-10 also allow
                       // certain octal literals.
-                      parseSupported = parse("01") !== 1;
+                      parseSupported = parse('01') !== 1;
                     } catch (exception) {}
                   }
                   if (parseSupported) {
@@ -6510,7 +6510,7 @@ arguments[4][15][0].apply(exports,arguments)
                       // FF 4.0, 4.0.1, and Rhino 1.7R3-R4 allow trailing decimal
                       // points. These environments, along with FF 3.1b1 and 2,
                       // also allow trailing commas in JSON objects and arrays.
-                      parseSupported = parse("1.") !== 1;
+                      parseSupported = parse('1.') !== 1;
                     } catch (exception) {}
                   }
                 }
@@ -6525,17 +6525,17 @@ arguments[4][15][0].apply(exports,arguments)
       return has[name] = !!isSupported;
     }
 
-    if (!has("json")) {
+    if (!has('json')) {
       // Common `[[Class]]` name aliases.
-      var functionClass = "[object Function]",
-          dateClass = "[object Date]",
-          numberClass = "[object Number]",
-          stringClass = "[object String]",
-          arrayClass = "[object Array]",
-          booleanClass = "[object Boolean]";
+      var functionClass = '[object Function]',
+          dateClass = '[object Date]',
+          numberClass = '[object Number]',
+          stringClass = '[object String]',
+          arrayClass = '[object Array]',
+          booleanClass = '[object Boolean]';
 
       // Detect incomplete support for accessing string characters by index.
-      var charIndexBuggy = has("bug-string-char-index");
+      var charIndexBuggy = has('bug-string-char-index');
 
       // Define additional utility methods if the `Date` methods are buggy.
       if (!isExtended) {
@@ -6558,7 +6558,7 @@ arguments[4][15][0].apply(exports,arguments)
           if ((members.__proto__ = null, members.__proto__ = {
             // The *proto* property cannot be set multiple times in recent
             // versions of Firefox and SeaMonkey.
-            "toString": 1
+            'toString': 1
           }, members).toString != getClass) {
             // Safari <= 2.0.3 doesn't implement `Object#hasOwnProperty`, but
             // supports the mutable *proto* property.
@@ -6611,16 +6611,16 @@ arguments[4][15][0].apply(exports,arguments)
         // Normalize the iteration algorithm.
         if (!size) {
           // A list of non-enumerable properties inherited from `Object.prototype`.
-          members = ["valueOf", "toString", "toLocaleString", "propertyIsEnumerable", "isPrototypeOf", "hasOwnProperty", "constructor"];
+          members = ['valueOf', 'toString', 'toLocaleString', 'propertyIsEnumerable', 'isPrototypeOf', 'hasOwnProperty', 'constructor'];
           // IE <= 8, Mozilla 1.0, and Netscape 6.2 ignore shadowed non-enumerable
           // properties.
           forEach = function (object, callback) {
             var isFunction = getClass.call(object) == functionClass, property, length;
-            var hasProperty = !isFunction && typeof object.constructor != "function" && objectTypes[typeof object.hasOwnProperty] && object.hasOwnProperty || isProperty;
+            var hasProperty = !isFunction && typeof object.constructor != 'function' && objectTypes[typeof object.hasOwnProperty] && object.hasOwnProperty || isProperty;
             for (property in object) {
               // Gecko <= 1.0 enumerates the `prototype` property of functions under
               // certain conditions; IE does not.
-              if (!(isFunction && property == "prototype") && hasProperty.call(object, property)) {
+              if (!(isFunction && property == 'prototype') && hasProperty.call(object, property)) {
                 callback(property);
               }
             }
@@ -6636,7 +6636,7 @@ arguments[4][15][0].apply(exports,arguments)
               // Store each property name to prevent double enumeration. The
               // `prototype` property of functions is not enumerated due to cross-
               // environment inconsistencies.
-              if (!(isFunction && property == "prototype") && !isProperty.call(members, property) && (members[property] = 1) && isProperty.call(object, property)) {
+              if (!(isFunction && property == 'prototype') && !isProperty.call(members, property) && (members[property] = 1) && isProperty.call(object, property)) {
                 callback(property);
               }
             }
@@ -6646,13 +6646,13 @@ arguments[4][15][0].apply(exports,arguments)
           forEach = function (object, callback) {
             var isFunction = getClass.call(object) == functionClass, property, isConstructor;
             for (property in object) {
-              if (!(isFunction && property == "prototype") && isProperty.call(object, property) && !(isConstructor = property === "constructor")) {
+              if (!(isFunction && property == 'prototype') && isProperty.call(object, property) && !(isConstructor = property === 'constructor')) {
                 callback(property);
               }
             }
             // Manually invoke the callback for the `constructor` property due to
             // cross-environment inconsistencies.
-            if (isConstructor || isProperty.call(object, (property = "constructor"))) {
+            if (isConstructor || isProperty.call(object, (property = 'constructor'))) {
               callback(property);
             }
           };
@@ -6666,21 +6666,21 @@ arguments[4][15][0].apply(exports,arguments)
       // indicates which properties should be serialized. The optional `width`
       // argument may be either a string or number that specifies the indentation
       // level of the output.
-      if (!has("json-stringify")) {
+      if (!has('json-stringify')) {
         // Internal: A map of control characters and their escaped equivalents.
         var Escapes = {
-          92: "\\\\",
+          92: '\\\\',
           34: '\\"',
-          8: "\\b",
-          12: "\\f",
-          10: "\\n",
-          13: "\\r",
-          9: "\\t"
+          8: '\\b',
+          12: '\\f',
+          10: '\\n',
+          13: '\\r',
+          9: '\\t'
         };
 
         // Internal: Converts `value` into a zero-padded string such that its
         // length is at least equal to `width`. The `width` must be <= 6.
-        var leadingZeroes = "000000";
+        var leadingZeroes = '000000';
         var toPaddedString = function (width, value) {
           // The `|| 0` expression is necessary to work around a bug in
           // Opera <= 7.54u2 where `0 == -0`, but `String(-0) !== "0"`.
@@ -6691,10 +6691,10 @@ arguments[4][15][0].apply(exports,arguments)
         // characters (characters with code unit values between 0 and 31) with
         // their escaped equivalents. This is an implementation of the
         // `Quote(value)` operation defined in ES 5.1 section 15.12.3.
-        var unicodePrefix = "\\u00";
+        var unicodePrefix = '\\u00';
         var quote = function (value) {
           var result = '"', index = 0, length = value.length, useCharIndex = !charIndexBuggy || length > 10;
-          var symbols = useCharIndex && (charIndexBuggy ? value.split("") : value);
+          var symbols = useCharIndex && (charIndexBuggy ? value.split('') : value);
           for (; index < length; index++) {
             var charCode = value.charCodeAt(index);
             // If the character is a control character, append its Unicode or
@@ -6722,9 +6722,9 @@ arguments[4][15][0].apply(exports,arguments)
             // Necessary for host object support.
             value = object[property];
           } catch (exception) {}
-          if (typeof value == "object" && value) {
+          if (typeof value == 'object' && value) {
             className = getClass.call(value);
-            if (className == dateClass && !isProperty.call(value, "toJSON")) {
+            if (className == dateClass && !isProperty.call(value, 'toJSON')) {
               if (value > -1 / 0 && value < 1 / 0) {
                 // Dates are serialized according to the `Date#toJSON` method
                 // specified in ES 5.1 section 15.9.5.44. See section 15.9.1.15
@@ -6758,17 +6758,17 @@ arguments[4][15][0].apply(exports,arguments)
                   milliseconds = value.getUTCMilliseconds();
                 }
                 // Serialize extended years correctly.
-                value = (year <= 0 || year >= 1e4 ? (year < 0 ? "-" : "+") + toPaddedString(6, year < 0 ? -year : year) : toPaddedString(4, year)) +
-                  "-" + toPaddedString(2, month + 1) + "-" + toPaddedString(2, date) +
+                value = (year <= 0 || year >= 1e4 ? (year < 0 ? '-' : '+') + toPaddedString(6, year < 0 ? -year : year) : toPaddedString(4, year)) +
+                  '-' + toPaddedString(2, month + 1) + '-' + toPaddedString(2, date) +
                   // Months, dates, hours, minutes, and seconds should have two
                   // digits; milliseconds should have three.
-                  "T" + toPaddedString(2, hours) + ":" + toPaddedString(2, minutes) + ":" + toPaddedString(2, seconds) +
+                  'T' + toPaddedString(2, hours) + ':' + toPaddedString(2, minutes) + ':' + toPaddedString(2, seconds) +
                   // Milliseconds are optional in ES 5.0, but required in 5.1.
-                  "." + toPaddedString(3, milliseconds) + "Z";
+                  '.' + toPaddedString(3, milliseconds) + 'Z';
               } else {
                 value = null;
               }
-            } else if (typeof value.toJSON == "function" && ((className != numberClass && className != stringClass && className != arrayClass) || isProperty.call(value, "toJSON"))) {
+            } else if (typeof value.toJSON == 'function' && ((className != numberClass && className != stringClass && className != arrayClass) || isProperty.call(value, 'toJSON'))) {
               // Prototype <= 1.6.1 adds non-standard `toJSON` methods to the
               // `Number`, `String`, `Date`, and `Array` prototypes. JSON 3
               // ignores all `toJSON` methods on these objects unless they are
@@ -6782,22 +6782,22 @@ arguments[4][15][0].apply(exports,arguments)
             value = callback.call(object, property, value);
           }
           if (value === null) {
-            return "null";
+            return 'null';
           }
           className = getClass.call(value);
           if (className == booleanClass) {
             // Booleans are represented literally.
-            return "" + value;
+            return '' + value;
           } else if (className == numberClass) {
             // JSON numbers must be finite. `Infinity` and `NaN` are serialized as
             // `"null"`.
-            return value > -1 / 0 && value < 1 / 0 ? "" + value : "null";
+            return value > -1 / 0 && value < 1 / 0 ? '' + value : 'null';
           } else if (className == stringClass) {
             // Strings are double-quoted and escaped.
-            return quote("" + value);
+            return quote('' + value);
           }
           // Recursively serialize objects and arrays.
-          if (typeof value == "object") {
+          if (typeof value == 'object') {
             // Check for cyclic structures. This is a linear search; performance
             // is inversely proportional to the number of unique nested objects.
             for (length = stack.length; length--;) {
@@ -6816,9 +6816,9 @@ arguments[4][15][0].apply(exports,arguments)
               // Recursively serialize array elements.
               for (index = 0, length = value.length; index < length; index++) {
                 element = serialize(index, value, callback, properties, whitespace, indentation, stack);
-                results.push(element === undef ? "null" : element);
+                results.push(element === undef ? 'null' : element);
               }
-              result = results.length ? (whitespace ? "[\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "]" : ("[" + results.join(",") + "]")) : "[]";
+              result = results.length ? (whitespace ? '[\n' + indentation + results.join(',\n' + indentation) + '\n' + prefix + ']' : ('[' + results.join(',') + ']')) : '[]';
             } else {
               // Recursively serialize object members. Members are selected from
               // either a user-specified list of property names, or the object
@@ -6832,10 +6832,10 @@ arguments[4][15][0].apply(exports,arguments)
                   // The "`space` character" refers to the literal space
                   // character, not the `space` {width} argument provided to
                   // `JSON.stringify`.
-                  results.push(quote(property) + ":" + (whitespace ? " " : "") + element);
+                  results.push(quote(property) + ':' + (whitespace ? ' ' : '') + element);
                 }
               });
-              result = results.length ? (whitespace ? "{\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "}" : ("{" + results.join(",") + "}")) : "{}";
+              result = results.length ? (whitespace ? '{\n' + indentation + results.join(',\n' + indentation) + '\n' + prefix + '}' : ('{' + results.join(',') + '}')) : '{}';
             }
             // Remove the object from the traversed object stack.
             stack.pop();
@@ -6860,7 +6860,7 @@ arguments[4][15][0].apply(exports,arguments)
               // Convert the `width` to an integer and create a string containing
               // `width` number of space characters.
               if ((width -= width % 1) > 0) {
-                for (whitespace = "", width > 10 && (width = 10); whitespace.length < width; whitespace += " ");
+                for (whitespace = '', width > 10 && (width = 10); whitespace.length < width; whitespace += ' ');
               }
             } else if (className == stringClass) {
               whitespace = width.length <= 10 ? width : width.slice(0, 10);
@@ -6869,25 +6869,25 @@ arguments[4][15][0].apply(exports,arguments)
           // Opera <= 7.54u2 discards the values associated with empty string keys
           // (`""`) only if they are used directly within an object member list
           // (e.g., `!("" in { "": 1})`).
-          return serialize("", (value = {}, value[""] = source, value), callback, properties, whitespace, "", []);
+          return serialize('', (value = {}, value[''] = source, value), callback, properties, whitespace, '', []);
         };
       }
 
       // Public: Parses a JSON source string.
-      if (!has("json-parse")) {
+      if (!has('json-parse')) {
         var fromCharCode = String.fromCharCode;
 
         // Internal: A map of escaped control characters and their unescaped
         // equivalents.
         var Unescapes = {
-          92: "\\",
+          92: '\\',
           34: '"',
-          47: "/",
-          98: "\b",
-          116: "\t",
-          110: "\n",
-          102: "\f",
-          114: "\r"
+          47: '/',
+          98: '\b',
+          116: '\t',
+          110: '\n',
+          102: '\f',
+          114: '\r'
         };
 
         // Internal: Stores the parser state.
@@ -6923,7 +6923,7 @@ arguments[4][15][0].apply(exports,arguments)
                 // begin parsing the string. String tokens are prefixed with the
                 // sentinel `@` character to distinguish them from punctuators and
                 // end-of-string tokens.
-                for (value = "@", Index++; Index < length;) {
+                for (value = '@', Index++; Index < length;) {
                   charCode = source.charCodeAt(Index);
                   if (charCode < 32) {
                     // Unescaped ASCII control characters (those with a code unit
@@ -6955,7 +6955,7 @@ arguments[4][15][0].apply(exports,arguments)
                           }
                         }
                         // Revive the escaped character.
-                        value += fromCharCode("0x" + source.slice(begin, Index));
+                        value += fromCharCode('0x' + source.slice(begin, Index));
                         break;
                       default:
                         // Invalid escape sequence.
@@ -7040,13 +7040,13 @@ arguments[4][15][0].apply(exports,arguments)
                   abort();
                 }
                 // `true`, `false`, and `null` literals.
-                if (source.slice(Index, Index + 4) == "true") {
+                if (source.slice(Index, Index + 4) == 'true') {
                   Index += 4;
                   return true;
-                } else if (source.slice(Index, Index + 5) == "false") {
+                } else if (source.slice(Index, Index + 5) == 'false') {
                   Index += 5;
                   return false;
-                } else if (source.slice(Index, Index + 4) == "null") {
+                } else if (source.slice(Index, Index + 4) == 'null') {
                   Index += 4;
                   return null;
                 }
@@ -7056,38 +7056,38 @@ arguments[4][15][0].apply(exports,arguments)
           }
           // Return the sentinel `$` character if the parser has reached the end
           // of the source string.
-          return "$";
+          return '$';
         };
 
         // Internal: Parses a JSON `value` token.
         var get = function (value) {
           var results, hasMembers;
-          if (value == "$") {
+          if (value == '$') {
             // Unexpected end of input.
             abort();
           }
-          if (typeof value == "string") {
-            if ((charIndexBuggy ? value.charAt(0) : value[0]) == "@") {
+          if (typeof value == 'string') {
+            if ((charIndexBuggy ? value.charAt(0) : value[0]) == '@') {
               // Remove the sentinel `@` character.
               return value.slice(1);
             }
             // Parse object and array literals.
-            if (value == "[") {
+            if (value == '[') {
               // Parses a JSON array, returning a new JavaScript array.
               results = [];
               for (;; hasMembers || (hasMembers = true)) {
                 value = lex();
                 // A closing square bracket marks the end of the array literal.
-                if (value == "]") {
+                if (value == ']') {
                   break;
                 }
                 // If the array literal contains elements, the current token
                 // should be a comma separating the previous element from the
                 // next.
                 if (hasMembers) {
-                  if (value == ",") {
+                  if (value == ',') {
                     value = lex();
-                    if (value == "]") {
+                    if (value == ']') {
                       // Unexpected trailing `,` in array literal.
                       abort();
                     }
@@ -7097,27 +7097,27 @@ arguments[4][15][0].apply(exports,arguments)
                   }
                 }
                 // Elisions and leading commas are not permitted.
-                if (value == ",") {
+                if (value == ',') {
                   abort();
                 }
                 results.push(get(value));
               }
               return results;
-            } else if (value == "{") {
+            } else if (value == '{') {
               // Parses a JSON object, returning a new JavaScript object.
               results = {};
               for (;; hasMembers || (hasMembers = true)) {
                 value = lex();
                 // A closing curly brace marks the end of the object literal.
-                if (value == "}") {
+                if (value == '}') {
                   break;
                 }
                 // If the object literal contains members, the current token
                 // should be a comma separator.
                 if (hasMembers) {
-                  if (value == ",") {
+                  if (value == ',') {
                     value = lex();
-                    if (value == "}") {
+                    if (value == '}') {
                       // Unexpected trailing `,` in object literal.
                       abort();
                     }
@@ -7129,7 +7129,7 @@ arguments[4][15][0].apply(exports,arguments)
                 // Leading commas are not permitted, object property names must be
                 // double-quoted strings, and a `:` must separate each property
                 // name and value.
-                if (value == "," || typeof value != "string" || (charIndexBuggy ? value.charAt(0) : value[0]) != "@" || lex() != ":") {
+                if (value == ',' || typeof value != 'string' || (charIndexBuggy ? value.charAt(0) : value[0]) != '@' || lex() != ':') {
                   abort();
                 }
                 results[value.slice(1)] = get(lex());
@@ -7157,7 +7157,7 @@ arguments[4][15][0].apply(exports,arguments)
         // `Walk(holder, name)` operation defined in ES 5.1 section 15.12.2.
         var walk = function (source, property, callback) {
           var value = source[property], length;
-          if (typeof value == "object" && value) {
+          if (typeof value == 'object' && value) {
             // `forEach` can't be used to traverse an array in Opera <= 8.54
             // because its `Object#hasOwnProperty` implementation returns `false`
             // for array indices (e.g., `![1, 2, 3].hasOwnProperty("0")`).
@@ -7178,20 +7178,20 @@ arguments[4][15][0].apply(exports,arguments)
         exports.parse = function (source, callback) {
           var result, value;
           Index = 0;
-          Source = "" + source;
+          Source = '' + source;
           result = get(lex());
           // If a JSON string contains multiple tokens, it is invalid.
-          if (lex() != "$") {
+          if (lex() != '$') {
             abort();
           }
           // Reset the parser state.
           Index = Source = null;
-          return callback && getClass.call(callback) == functionClass ? walk((value = {}, value[""] = result, value), "", callback) : result;
+          return callback && getClass.call(callback) == functionClass ? walk((value = {}, value[''] = result, value), '', callback) : result;
         };
       }
     }
 
-    exports["runInContext"] = runInContext;
+    exports['runInContext'] = runInContext;
     return exports;
   }
 
@@ -7201,17 +7201,17 @@ arguments[4][15][0].apply(exports,arguments)
   } else {
     // Export for web browsers and JavaScript engines.
     var nativeJSON = root.JSON,
-        previousJSON = root["JSON3"],
+        previousJSON = root['JSON3'],
         isRestored = false;
 
-    var JSON3 = runInContext(root, (root["JSON3"] = {
+    var JSON3 = runInContext(root, (root['JSON3'] = {
       // Public: Restores the original value of the global `JSON` object and
       // returns a reference to the `JSON3` object.
-      "noConflict": function () {
+      'noConflict': function () {
         if (!isRestored) {
           isRestored = true;
           root.JSON = nativeJSON;
-          root["JSON3"] = previousJSON;
+          root['JSON3'] = previousJSON;
           nativeJSON = previousJSON = null;
         }
         return JSON3;
@@ -7219,8 +7219,8 @@ arguments[4][15][0].apply(exports,arguments)
     }));
 
     root.JSON = {
-      "parse": JSON3.parse,
-      "stringify": JSON3.stringify
+      'parse': JSON3.parse,
+      'stringify': JSON3.stringify
     };
   }
 
@@ -7232,7 +7232,7 @@ arguments[4][15][0].apply(exports,arguments)
   }
 }).call(this);
 
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : {})
+}).call(this,typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {})
 },{}],51:[function(_dereq_,module,exports){
 module.exports = toArray
 

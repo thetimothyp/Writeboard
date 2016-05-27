@@ -1,6 +1,7 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
 var whiteboard = document.getElementById('whiteboard');
+var socket = io(location.origin);
 
 whiteboard.innerHTML = '<canvas id="canvas" width="' + width*0.6 + '" height="' + height + '"></canvas>';
 whiteboard.innerHTML += '<button id="erase">ERASE ALL</button>';
