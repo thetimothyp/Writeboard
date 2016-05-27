@@ -17,6 +17,9 @@ io.on('connection', function(socket) {
 	socket.on('chat', function(msg) {
 		io.emit('chat', msg);
 	})
+	socket.on('drawClick', function(data) {
+		socket.broadcast.emit('draw', { x : data.x, y : data.y, type: data.type });
+	})
 })
 
 http.listen(3000, function() {
