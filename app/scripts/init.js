@@ -17,3 +17,6 @@ socket.on('chat', function(msg) {
 	$('#messages').append($('<li>').text(msg));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 });
+socket.on('draw', function(data) {
+	draw(data.x, data.y, data.type);
+})

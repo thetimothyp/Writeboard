@@ -35,6 +35,10 @@ $('canvas').on('mousemove mousedown', function(e) {
 })
 
 function draw(x, y, type) {
+	if (type === 'erase') {
+		context.clearRect(0, 0, canvas.width, canvas.height);
+		return;
+	}
 	if (type === 'start') {
 		context.moveTo(x,y);
 		context.beginPath();
@@ -45,11 +49,8 @@ function draw(x, y, type) {
 		context.closePath();
 	}
 }
-socket.on('draw', function(data) {
-	console.log('draw(' + data.x + ', ' + data.y + ', ' + data.type + ')');
-	draw(data.x, data.y, data.type);
-})
 
 erase.onclick = function(e) {
 	context.clearRect(0, 0, canvas.width, canvas.height);
+	socket.emit('drawClick', { x : 0, y : 0, type : 'erase' });
 }
