@@ -7,8 +7,6 @@ var context = canvas.getContext('2d');
 var type;
 var mouseDown = 0;
 
-
-
 canvas.onmousemove = function(e) {
 	if (mouseDown) {
 		type = 'drag';

@@ -3,7 +3,7 @@ var height = window.innerHeight;
 var whiteboard = document.getElementById('whiteboard');
 
 whiteboard.innerHTML = '<canvas id="canvas" width="' + width*0.6 + '" height="' + height + '"></canvas>';
-whiteboard.innerHTML += '<button id="erase">ERASE ALL</button>'
+whiteboard.innerHTML += '<button id="erase">ERASE ALL</button>';
 
 var message = document.getElementById('message');
 document.getElementById('chat').onsubmit = function(e) {

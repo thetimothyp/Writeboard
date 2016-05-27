@@ -26,10 +26,17 @@ html, body {
     }
   }
 
-  button {
+  #erase {
     position: absolute;
     bottom: 10px;
     left: 10px;
+    margin: 0;
+  }
+
+  #save {
+    position: absolute;
+    bottom: 10px;
+    left: 90px;
     margin: 0;
   }
 }
