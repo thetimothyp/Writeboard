@@ -29,7 +29,7 @@ $('canvas').on('mousemove mousedown', function(e) {
 	var x = e.offsetX;
 	var y = e.offsetY;
 	draw(x,y,type);
-	socket.emit('drawClick:' + channel, { x : x, y : y, type : type });
+	socket.emit('drawClick', { x : x, y : y, type : type });
 })
 
 function draw(x, y, type) {
@@ -50,5 +50,5 @@ function draw(x, y, type) {
 
 erase.onclick = function(e) {
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	socket.emit('drawClick:' + channel, { x : 0, y : 0, type : 'erase' });
+	socket.emit('drawClick', { x : 0, y : 0, type : 'erase' });
 }

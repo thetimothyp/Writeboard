@@ -8,7 +8,7 @@ var socket = io('http://localhost:3000');
 whiteboard.innerHTML = '<canvas id="canvas" width="' + width*0.6 + '" height="' + height + '"></canvas>';
 whiteboard.innerHTML += '<button id="erase">ERASE ALL</button>';
 
-socket.on('draw' + channel, function(data) {
+socket.on('draw', function(data) {
 	draw(data.x, data.y, data.type);
 })
 

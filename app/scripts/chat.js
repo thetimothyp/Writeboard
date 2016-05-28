@@ -4,14 +4,14 @@ var message = document.getElementById('message');
 // Emit inputted message to chat:{channel}
 $('#chat').on('submit', function(e) {
 	if (message.value.length > 0) {
-		socket.emit('chat:' + channel, message.value);
+		socket.emit('chat', message.value);
 		message.value = '';
 	}
 	return false;
 });
 
 // Listen on chat:{channel}
-socket.on('chat:' + channel, function(msg) {
+socket.on('chat', function(msg) {
 	$('#messages').append($('<li>').text(msg));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 });
