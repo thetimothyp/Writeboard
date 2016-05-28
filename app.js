@@ -1,10 +1,6 @@
 var express = require('express');
 var app = express();
 var http = require('http').createServer(app);
-// var io = require('socket.io')(http, {
-// 	transports : ['xhr-polling'],
-// 	pollingDuration: 10
-// });
 var io = require('socket.io').listen(http);
 
 app.use(express.static(__dirname + '/dist'));

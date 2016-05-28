@@ -21,3 +21,17 @@ socket.on('chat', function(msg) {
 socket.on('draw', function(data) {
 	draw(data.x, data.y, data.type);
 })
+
+$("#channel").keypress(function(e){ 
+	if (e.which == 13) {
+		blurAll();
+	}
+	return e.which != 13; 
+});
+
+function blurAll(){
+ var tmp = document.createElement("input");
+ document.body.appendChild(tmp);
+ tmp.focus();
+ document.body.removeChild(tmp);
+}
