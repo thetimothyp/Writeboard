@@ -3,7 +3,7 @@ var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io').listen(http);
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/app'));
 
 app.get('/', function(req, res){
 	res.sendFile('/index.html');
@@ -14,11 +14,11 @@ io.on('connection', function(socket) {
 	socket.on('disconnect', function() {
 		console.log('user disconnected');
 	})
-	socket.on('chat', function(msg) {
-		io.emit('chat', msg);
+	socket.on('chat:all', function(msg) {
+		io.emit('chat:all', msg);
 	})
-	socket.on('drawClick', function(data) {
-		socket.broadcast.emit('draw', { x : data.x, y : data.y, type: data.type });
+	socket.on('drawClick:all', function(data) {
+		socket.broadcast.emit('draw:all', { x : data.x, y : data.y, type: data.type });
 	})
 })
 

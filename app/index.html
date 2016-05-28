@@ -22,7 +22,7 @@
     <div class="whiteboard" id="whiteboard"></div>
 
     <div class="chat">
-      <div id="channel">#<span contenteditable="true">all</span></div>
+      <div id="channel-container">#<span id="channel" contenteditable="true">all</span></div>
       <ul id="messages"></ul>
       <div class="message-bar">
         <form id="chat">
@@ -41,6 +41,7 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/socket.io.js"></script>
     <script src="scripts/init.js"></script>
+    <script src="scripts/chat.js"></script>
     <script src="scripts/draw.js"></script>
     <!-- endbuild -->
   </body>
