@@ -26,15 +26,23 @@ app.get('/', function(req, res){
 })
 
 io.on('connection', function(socket) {
+	var currentRoom = 'all';
 	console.log('user connected');
 	socket.on('disconnect', function() {
 		console.log('user disconnected');
 	})
+	socket.on('join', function(room) {
+		socket.join(room);
+		currentRoom = room;
+	})
+	socket.on('leave', function(room) {
+		socket.leave(room);
+	})
 	socket.on('chat', function(msg) {
-		io.emit('chat', msg);
+		io.to(currentRoom).emit('chat', msg);
 	})
 	socket.on('drawClick', function(data) {
-		socket.broadcast.emit('draw', { x : data.x, y : data.y, type: data.type });
+		socket.broadcast.to(currentRoom).emit('draw', { x : data.x, y : data.y, type: data.type });
 	})
 
 })

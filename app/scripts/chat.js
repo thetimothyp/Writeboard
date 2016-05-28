@@ -20,12 +20,21 @@ socket.on('chat', function(msg) {
 // Unfocus channel input on Enter keypress
 $("#channel").keypress(function(e){ 
 	var prevChannel = channel;
+	socket.emit('leave', prevChannel);
 	if (e.which == 13) {
 		channel = this.innerHTML;
+		channelSwitch(channel);
 		blurAll();
 	}
 	return e.which != 13; 
 });
+
+// Switch channels
+function channelSwitch(channel) {
+	socket.emit('join', channel);
+	$('#messages').append($('<li class="channel-switch">').text('Switched to channel #' + channel));
+	$('#messages').scrollTop($('#messages')[0].scrollHeight);
+}
 
 // Unfocus all inputs
 function blurAll(){

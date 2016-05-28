@@ -65,6 +65,10 @@ html, body {
     height: 86%;
     overflow: scroll;
 
+    .channel-switch {
+      font-weight: 800;
+    }
+
     li {
       padding: 5px 10px;
       font-size: 10pt;
