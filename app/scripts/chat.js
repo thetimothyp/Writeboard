@@ -4,7 +4,7 @@ var message = document.getElementById('message');
 // Emit inputted message to chat:{channel}
 $('#chat').on('submit', function(e) {
 	if (message.value.length > 0) {
-		socket.emit('chat', message.value);
+		socket.emit('chat', username + ': ' + message.value);
 		message.value = '';
 	}
 	return false;
@@ -12,7 +12,11 @@ $('#chat').on('submit', function(e) {
 
 // Listen on chat:{channel}
 socket.on('chat', function(msg) {
-	$('#messages').append($('<li>').text(msg));
+	var li = document.createElement('li');
+	var user = msg.split(':')[0];
+	var data = msg.split(':')[1];
+	$(li).html('<span id="user">' + user + ':</span> ' + data).appendTo($('#messages'));
+	// $('#messages').append($('<li>').text(msg));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 });
 

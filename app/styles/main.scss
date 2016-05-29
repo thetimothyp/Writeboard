@@ -71,13 +71,12 @@ html, body {
     }
 
     li {
+      #user {
+        font-weight: 800;
+      }
       padding: 5px 10px;
       font-size: 10pt;
       font-family: 'Open Sans', 'Helvetica', sans-serif;
-    }
-
-    li:nth-child(even) {
-      background: #EEEEEE;
     }
   }
 
