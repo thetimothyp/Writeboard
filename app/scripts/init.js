@@ -2,6 +2,9 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 var whiteboard = document.getElementById('whiteboard');
 var username = prompt('Enter username');
+while (username == null) {
+	prompt('Enter username');
+}
 var socket = io(location.origin);
 // var socket = io('http://localhost:3000');
 socket.emit('join', 'all');

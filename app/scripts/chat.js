@@ -16,7 +16,6 @@ socket.on('chat', function(msg) {
 	var user = msg.split(':')[0];
 	var data = msg.split(':')[1];
 	$(li).html('<span id="user">' + user + ':</span> ' + data).appendTo($('#messages'));
-	// $('#messages').append($('<li>').text(msg));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 });
 
