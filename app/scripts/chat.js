@@ -32,6 +32,7 @@ $('#channel').keypress(function(e){
 // Switch channels
 function channelSwitch(channel) {
 	socket.emit('join', channel);
+	$('#messages').empty();
 	$('#messages').append($('<li class="channel-switch">').text('Switched to channel #' + channel));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 }

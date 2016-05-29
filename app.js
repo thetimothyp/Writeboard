@@ -23,6 +23,14 @@ io.on('connection', function(socket) {
 	socket.on('join', function(room) {
 		socket.join(room);
 		currentRoom = room;
+		Channel.find({ name: currentRoom }, function(err, channel) {
+			if (channel[0]) {
+				var history = channel[0].messages;
+				for (var i = 0; i < history.length; ++i) {
+					socket.emit('chat', history[i]);
+				}
+			}
+		})
 	})
 	socket.on('leave', function(room) {
 		socket.leave(room);
