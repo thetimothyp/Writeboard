@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   position: absolute;
-  background: #AED6F1;
+  background: #DDDDDD;
 }
 
 .whiteboard {
@@ -51,11 +51,12 @@ html, body {
   z-index: 0;
 
   #channel-container {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #DDDDDD;
     padding: 10px;
     font-family: 'Open Sans', 'Helvetica', sans-serif;
     font-weight: 700;
     font-size: 20pt;
+    color: #444;
   }
 
   #messages {
@@ -83,7 +84,7 @@ html, body {
   .message-bar {
     position: fixed;
     bottom: 0;
-    margin-left: 1px;
+    margin-left: -1px;
     width: 40%;
 
     form {
