@@ -3,19 +3,20 @@ var message = document.getElementById('message');
 
 // Emit inputted message to chat:{channel}
 $('#chat').on('submit', function(e) {
+	var date = new Date();
+	var time = date.toLocaleString('en-US').split(',')[1].slice(1);
+	var data = { user: username, msg: message.value, timestamp: time }
 	if (message.value.length > 0) {
-		socket.emit('chat', username + ': ' + message.value);
+		socket.emit('chat', data);
 		message.value = '';
 	}
 	return false;
 });
 
 // Listen on chat:{channel}
-socket.on('chat', function(msg) {
+socket.on('chat', function(data) {
 	var li = document.createElement('li');
-	var user = msg.split(':')[0];
-	var data = msg.split(':')[1];
-	$(li).html('<span id="user">' + user + ':</span> ' + data).appendTo($('#messages'));
+	$(li).html('<span id="user">' + data.user + ' <span id="timestamp">(' + data.timestamp + '):</span></span> ' + data.msg).appendTo($('#messages'));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 });
 

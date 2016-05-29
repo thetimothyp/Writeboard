@@ -44,9 +44,9 @@ io.on('connection', function(socket) {
 	})
 	// On receiving 'chat' from client, broadcast the message to the whole 
 	// room and add the message to the database
-	socket.on('chat', function(msg) {
-		io.to(currentRoom).emit('chat', msg);
-		Channel.findOneAndUpdate({ name: currentRoom }, { $push: { messages: msg }}, { upsert: true }, function(err) {
+	socket.on('chat', function(data) {
+		io.to(currentRoom).emit('chat', data);
+		Channel.findOneAndUpdate({ name: currentRoom }, { $push: { messages: { user: data.user, msg: data.msg, timestamp: data.timestamp } }}, { upsert: true }, function(err) {
 			if (err) console.log(err);
 		});
 	})
