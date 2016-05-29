@@ -1,9 +1,3 @@
-// var canvas = document.getElementById('canvas');
-// var context = canvas.getContext('2d');
-// 	context.strokeStyle = '#000000';
-// 	context.lineWidth = 5;
-// 	context.lineCap = 'round';
-
 var type;
 var mouseDown = 0;
 
