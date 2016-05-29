@@ -18,7 +18,7 @@ socket.on('chat', function(msg) {
 
 // Change channel
 // Unfocus channel input on Enter keypress
-$("#channel").keypress(function(e){ 
+$('#channel').keypress(function(e){ 
 	var prevChannel = channel;
 	socket.emit('leave', prevChannel);
 	if (e.which == 13) {
@@ -38,7 +38,7 @@ function channelSwitch(channel) {
 
 // Unfocus all inputs
 function blurAll(){
- var tmp = document.createElement("input");
+ var tmp = document.createElement('input');
  document.body.appendChild(tmp);
  tmp.focus();
  document.body.removeChild(tmp);

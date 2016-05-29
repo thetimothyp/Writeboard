@@ -6,6 +6,6 @@ var channelSchema = new Schema({
 	messages: Array
 });
 
-var Channel = mongoose.model('Channel', channelSchema);
+var Channel = mongoose.model('Channels', channelSchema);
 
 module.exports = Channel;
