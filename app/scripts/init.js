@@ -1,8 +1,8 @@
 var width = window.innerWidth;
 var height = window.innerHeight;
 var whiteboard = document.getElementById('whiteboard');
-// var socket = io(location.origin);
-var socket = io('http://localhost:3000');
+var socket = io(location.origin);
+// var socket = io('http://localhost:3000');
 socket.emit('join', 'all');
 
 // Initialize Canvas
