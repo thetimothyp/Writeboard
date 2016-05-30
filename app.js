@@ -59,7 +59,7 @@ io.on('connection', function(socket) {
 	})
 	// Broadcast 'draw' command to all room participants
 	socket.on('drawClick', function(data) {
-		socket.broadcast.to(currentRoom).emit('draw', { x : data.x, y : data.y, type: data.type });
+		io.to(currentRoom).emit('draw', { x : data.x, y : data.y, type: data.type });
 	})
 	// Whenever imageData is received from a client, save it to DB
 	// so new room occupants may see

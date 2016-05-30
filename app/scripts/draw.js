@@ -22,9 +22,10 @@ $('canvas').on('mousemove mousedown', function(e) {
 	e.offsetY = e.clientY - canvas.offsetTop;
 	var x = e.offsetX;
 	var y = e.offsetY;
-	draw(x,y,type);
 	// Send draw command to server
-	socket.emit('drawClick', { x : x, y : y, type : type });
+	if (mouseDown) {
+		socket.emit('drawClick', { x : x, y : y, type : type });
+	}
 })
 
 $('canvas').on('mouseup', function(e) {
