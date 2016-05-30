@@ -27,20 +27,27 @@ io.on('connection', function(socket) {
 	})
 	// On 'join' event, switch socket client to given room and emit chat 
 	// history of that room to the client
-	socket.on('join', function(room) {
-		socket.join(room);
-		currentRoom = room;
+	socket.on('join', function(data) {
+		socket.join(data.channel);
+		currentRoom = data.channel;
 		Channel.find({ name: currentRoom }, function(err, channel) {
 			if (channel[0]) {
+				// Emit chat history to client
 				var history = channel[0].messages;
 				for (var i = 0; i < history.length; ++i) {
 					socket.emit('chat', history[i]);
 				}
+				// Emit current state of canvas to client
+				socket.emit('imageData', channel[0].imageData);
+				// Tell everyone else that a new user has joined
+				var announcement = data.user + ' has entered the channel.';
+				socket.broadcast.to(currentRoom).emit('announcement', announcement);
 			}
 		})
 	})
-	socket.on('leave', function(room) {
-		socket.leave(room);
+	socket.on('leave', function(data) {
+		socket.broadcast.to(data.channel).emit('announcement', data.user + ' has left the channel.');
+		socket.leave(data.channel);
 	})
 	// On receiving 'chat' from client, broadcast the message to the whole 
 	// room and add the message to the database
@@ -53,6 +60,13 @@ io.on('connection', function(socket) {
 	// Broadcast 'draw' command to all room participants
 	socket.on('drawClick', function(data) {
 		socket.broadcast.to(currentRoom).emit('draw', { x : data.x, y : data.y, type: data.type });
+	})
+	// Whenever imageData is received from a client, save it to DB
+	// so new room occupants may see
+	socket.on('imageData', function(data) {
+		Channel.findOneAndUpdate({ name: currentRoom }, { imageData: data }, { upsert: true }, function(err) {
+			if (err) console.log(err);
+		});
 	})
 
 })

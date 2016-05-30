@@ -23,7 +23,10 @@ $('canvas').on('mousemove mousedown', function(e) {
 	var x = e.offsetX;
 	var y = e.offsetY;
 	draw(x,y,type);
+	// Send draw command to server
 	socket.emit('drawClick', { x : x, y : y, type : type });
+	// Send snapshot of canvas to server
+	socket.emit('imageData', canvas.toDataURL());
 })
 
 function draw(x, y, type) {
