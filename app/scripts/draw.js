@@ -25,6 +25,9 @@ $('canvas').on('mousemove mousedown', function(e) {
 	draw(x,y,type);
 	// Send draw command to server
 	socket.emit('drawClick', { x : x, y : y, type : type });
+})
+
+$('canvas').on('mouseup', function(e) {
 	// Send snapshot of canvas to server
 	socket.emit('imageData', canvas.toDataURL());
 })
