@@ -51,4 +51,5 @@ function draw(x, y, type) {
 erase.onclick = function(e) {
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	socket.emit('drawClick', { x : 0, y : 0, type : 'erase' });
+	socket.emit('imageData', canvas.toDataURL());
 }
