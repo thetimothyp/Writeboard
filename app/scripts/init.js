@@ -8,6 +8,7 @@ while (username == null) {
 var socket = io(location.origin);
 // var socket = io('http://localhost:3000');
 socket.emit('join', {channel: 'all', user: username});
+$('#messages').append($('<li class="channel-switch">').text('Entered channel #all'));
 
 // Initialize Canvas
 whiteboard.innerHTML = '<canvas id="canvas" width="' + width*0.6 + '" height="' + height + '"></canvas>';

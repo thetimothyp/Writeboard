@@ -44,7 +44,7 @@ function channelSwitch(channel) {
 	socket.emit('join', { channel: channel, user: username });
 	$('#messages').empty();
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	$('#messages').append($('<li class="channel-switch">').text('Switched to channel #' + channel));
+	$('#messages').append($('<li class="channel-switch">').text('Entered channel #' + channel));
 	$('#messages').scrollTop($('#messages')[0].scrollHeight);
 }
 
