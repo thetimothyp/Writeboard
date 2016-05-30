@@ -5,8 +5,8 @@ var username = prompt('Enter username');
 while (username == null) {
 	prompt('Enter username');
 }
-// var socket = io(location.origin);
-var socket = io('http://localhost:3000');
+var socket = io(location.origin);
+// var socket = io('http://localhost:3000');
 socket.emit('join', {channel: 'all', user: username});
 
 // Initialize Canvas
