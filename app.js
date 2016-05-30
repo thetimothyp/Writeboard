@@ -34,8 +34,8 @@ io.on('connection', function(socket) {
 			if (channel[0]) {
 				// Emit chat history to client
 				var history = channel[0].messages;
-				for (var i = 19; i >= 0; --i) {
-					socket.emit('chat', history[history.length - i]);
+				for (var i = 0; i < history.length; ++i) {
+					socket.emit('chat', history[i]);
 				}
 				// Emit current state of canvas to client
 				socket.emit('imageData', channel[0].imageData);
