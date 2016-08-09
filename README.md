@@ -1,6 +1,6 @@
 # Writeboard
 
-A collaborative real-time whiteboard and chatroom web-app! Navigate to https://www.writeboard-app.herokuapp.com/ to demo.
+A collaborative real-time whiteboard and chatroom web-app! Navigate to https://writeboard-app.herokuapp.com/ to demo.
 
 #### To run locally:
 
